@@ -1,0 +1,46 @@
+
+mouseX = 0
+mouseY = 0
+document.onmousemove = function(e) {
+mouseX = e.clientX
+mouseY = e.clientY
+};
+document.onclick = function() {
+setTimeout(function(){var Elems = document.getElementsByClassName("contextmenu");while(Elems[0]) {Elems[0].parentNode.removeChild(Elems[0])}});
+};
+document.body.appendChild(document.createElement("style")).innerHTML = `
+.contextmenuoption {
+background-color: #4CAF50;
+border: none;
+color: white;
+border-radius: 3px;
+width: 100px; // You can change this value to whatever you want
+};
+`
+document.addEventListener("contextmenu",event => {
+event.preventDefault() // Prevents the user agent context menu from opening
+var Elems = document.getElementsByClassName("contextmenu");
+while(Elems[0]) {
+Elems[0].parentNode.removeChild(Elems[0]); // Removes all other context menus before opening a new one
+};
+var elem = document.createElement('div')
+elem.setAttribute("class","contextmenu")
+elem.setAttribute("style","position: fixed; left: 0; top: 0; top: "+ mouseY +"px; margin-left: "+ mouseX +"px; background-color: #ffffff; z-index: 999999;")
+elem.innerHTML = '<div><button class="contextmenuoption" id="contextmenu-option-1">Option 1</button></div><div><button class="contextmenuoption" id="contextmenu-option-2">Option 2</button></div><div><button class="contextmenuoption" id="contextmenu-option-3">Option 3</button></div><div><button class="contextmenuoption" id="contextmenu-option-4">Option 4</button></div><div><button class="contextmenuoption" id="contextmenu-option-5">Option 5</button></div>'
+document.body.appendChild(elem)
+document.getElementById("contextmenu-option-1").onclick = function() {
+alert("You clicked option 1");
+};
+document.getElementById("contextmenu-option-2").onclick = function() {
+alert("You clicked option 2");
+};
+document.getElementById("contextmenu-option-3").onclick = function() {
+alert("You clicked option 3");
+};
+document.getElementById("contextmenu-option-4").onclick = function() {
+alert("You clicked option 4");
+};
+document.getElementById("contextmenu-option-5").onclick = function() {
+alert("You clicked option 5");
+};
+});
