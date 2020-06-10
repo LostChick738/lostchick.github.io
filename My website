@@ -29,18 +29,18 @@ elem.setAttribute("style","position: fixed; left: 0; top: 0; top: "+ mouseY +"px
 elem.innerHTML = '<div><button class="contextmenuoption" id="contextmenu-option-1">Option 1</button></div><div><button class="contextmenuoption" id="contextmenu-option-2">Option 2</button></div><div><button class="contextmenuoption" id="contextmenu-option-3">Option 3</button></div><div><button class="contextmenuoption" id="contextmenu-option-4">Option 4</button></div><div><button class="contextmenuoption" id="contextmenu-option-5">Option 5</button></div>'
 document.body.appendChild(elem)
 document.getElementById("contextmenu-option-1").onclick = function() {
-alert("You clicked option 1");
+alert("You clicked option 1, and I'm working on it");
 };
 document.getElementById("contextmenu-option-2").onclick = function() {
-alert("You clicked option 2");
+alert("You clicked option 2, and I'm working on it");
 };
 document.getElementById("contextmenu-option-3").onclick = function() {
-alert("You clicked option 3");
+alert("You clicked option 3, and I'm working on it");
 };
 document.getElementById("contextmenu-option-4").onclick = function() {
-alert("You clicked option 4");
+alert("You clicked option 4, and I'm working on it");
 };
 document.getElementById("contextmenu-option-5").onclick = function() {
-alert("You clicked option 5");
+alert("You clicked option 5, and I'm working on it");
 };
 });
